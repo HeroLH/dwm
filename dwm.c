@@ -1740,6 +1740,8 @@ tagtoleft(const Arg *arg) {
 		selmon->sel->tags >>= 1;
 		focus(NULL);
 		arrange(selmon);
+		if(viewontag)
+			view(arg);
 	}
 }
 
