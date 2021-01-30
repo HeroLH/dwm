@@ -1763,7 +1763,7 @@ run(void)
 
 void
 runAutostart(void) {
-	system("cd ~/scripts; ./autostart.sh &");
+	system("cd ~/.config/scripts; ./autostart.sh &");
 }
 
 void

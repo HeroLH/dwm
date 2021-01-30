@@ -116,7 +116,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ ControlMask|ShiftMask,        XK_h,      hidewin,        {0} },
-	{ ControlMask,                  XK_h,      restorewin,     {0} },
+	{ ControlMask|ShiftMask,        XK_l,      restorewin,     {0} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
