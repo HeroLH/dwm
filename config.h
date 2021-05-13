@@ -83,7 +83,11 @@ static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34
 
 // my commands
 static const char *flameshot[]  = { "flameshot","gui", NULL };
-
+static const char *lightup[]  = {"xbacklight", "-inc", "10", NULL};
+static const char *lightdown[]  = {"xbacklight", "-dec", "5", NULL};
+static const char *soundup[]  = {"amixer", "-qM", "sset", "Master", "5%+", "unmute", NULL};
+static const char *sounddown[]  = {"amixer", "-qM", "sset", "Master", "10%-", "unmute", NULL};
+static const char *mute[]  = {"amixer", "-qM", "sset", "Master", "toggle", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -147,6 +151,11 @@ static Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ShiftMask,             XK_a,      spawn,          {.v = flameshot } },
+	{ ControlMask|ShiftMask,        XK_Right,  spawn,          {.v = lightup } },
+	{ ControlMask|ShiftMask,        XK_Left,   spawn,          {.v = lightdown } },
+	{ ControlMask|ShiftMask,	    XK_Up,     spawn,          {.v = soundup } },
+	{ ControlMask|ShiftMask,        XK_Down,   spawn,          {.v = sounddown } },
+	{ ControlMask|ShiftMask,        XK_F8,     spawn,          {.v = mute } },
 };
 
 /* button definitions */
